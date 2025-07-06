@@ -10,3 +10,8 @@ frontend/dist/
 
 # Environment variables
 *.env
+*.env.*
+
+# Ignore Python cache
+__pycache__/
+*.pyc
