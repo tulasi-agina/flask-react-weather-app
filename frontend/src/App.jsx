@@ -1,4 +1,4 @@
-// App.jsx - React frontend for sending input to a Flask backend and displaying the response
+// App.jsx - React frontend for sending a city name to a Flask backend and displaying the temperature
 
 import { useState } from 'react'  // useState is a React hook for managing component state
 
@@ -11,7 +11,7 @@ function App() {
   const sendMessage = async () => {
     try {
       // Send POST request to Flask at /api/message with user input
-      const res = await fetch('https://api.cinechron.com/api/message', {
+      const res = await fetch(import.meta.env.VITE_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input })
@@ -32,15 +32,17 @@ function App() {
     <div style={{ padding: '2rem' }}>
       <h1>React + Flask App</h1>
 
-      {/* Input field for user to type a message */}
+      {/* User input field for city name */}
       <input
         value={input}
         onChange={e => setInput(e.target.value)}
-        placeholder="Type a message"
+        placeholder="Enter a city name (e.g. Seattle)"
       />
 
-      {/* Button to send the input to Flask */}
-      <button onClick={sendMessage}>Send</button>
+      {/* Send Button to send the input to Flask */}
+      <button onClick={sendMessage} style={{ marginLeft: '1rem' }}>
+       Check Temperature
+      </button>
 
       {/* Display the response from Flask */}
       <p>{response}</p>
