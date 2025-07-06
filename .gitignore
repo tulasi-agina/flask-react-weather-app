@@ -1,0 +1,12 @@
+# to prevent pushing unnecessary files (like venv, .env (with passwords), node modules)
+# Python virtual environment
+backend/venv/
+
+# Node modules
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# Environment variables
+*.env
