@@ -7,7 +7,8 @@ import os
 from dotenv import load_dotenv  # Load environment variables from .env
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '../frontend/.env.production'))
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
 # Create a new Flask application instance
 app = Flask(__name__)
