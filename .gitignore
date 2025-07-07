@@ -1,6 +1,7 @@
 # to prevent pushing unnecessary files (like venv, .env (with passwords), node modules)
 # Python virtual environment
 backend/venv/
+venv/
 
 # Node modules
 frontend/node_modules/
@@ -11,7 +12,16 @@ frontend/dist/
 # Environment variables
 *.env
 *.env.*
+env/
 
 # Ignore Python cache
 __pycache__/
 *.pyc
+
+# Node
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
